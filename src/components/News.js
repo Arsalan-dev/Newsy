@@ -99,17 +99,16 @@ export class News extends Component {
             <div className='container my-3' >
                 <h2>Newsy - Top Headlines</h2>
                 <div className="row my-3">
-                    <div className="col-md-4"><NewsItem title="Title1" description="Description1" 
-                    imgUrl='https://www.reuters.com/resizer/TQoCrVuEACBZgIwB32k2SotVqSM=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/HHYHR3APURJRDGTZQEIWNKRZLQ.jpg'
-                    newsUrl = 'TODO' /></div>
-                    <div className="col-md-4"><NewsItem title="Title1" description="Description1" /></div>
-                    <div className="col-md-4"><NewsItem title="Title1" description="Description1" /></div>
+                    {this.state.articles.map((element)=>{
+                        return <div className="col-md-4 my-3" key={element.url}>
+                        <NewsItem title={element.title} description={element.description} 
+                        imgUrl={element.urlToImage}
+                        newsUrl = 'TODO' /></div>
+
+                    })}
+                    
                 </div>
-                <div className="row my-3">
-                    <div className="col-md-4"><NewsItem title="Title1" description="Description1" /></div>
-                    <div className="col-md-4"><NewsItem title="Title1" description="Description1" /></div>
-                    <div className="col-md-4"><NewsItem title="Title1" description="Description1" /></div>
-                </div>
+
             </div>
 
 
